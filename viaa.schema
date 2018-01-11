@@ -62,7 +62,7 @@ objectclass ( 1.3.6.1.4.1.50458.1.2017.07.29.2
         NAME 'x-be-viaa-educationalPerson'
         DESC 'Person who is active in education, e.g. Teacher, Student, Professor.'
         AUXILIARY
-        MAY ( x-be-viaa-eduCourseName $ x-be-viaa-eduTypeName $ x-be-viaa-eduTypeCode $ x-be-viaa-eduLevelName $ 'x-viaa-be-eduAvoExpiry $ organizationalStatus ) )
+        MAY ( x-be-viaa-eduCourseName $ x-be-viaa-eduTypeName $ x-be-viaa-eduTypeCode $ x-be-viaa-eduLevelName $ x-viaa-be-eduAvoExpiry $ organizationalStatus ) )
 
 objectclass ( 1.3.6.1.4.1.50458.1.2017.07.29.3
         NAME 'x-be-viaa-Organization'
