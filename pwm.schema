@@ -1,4 +1,4 @@
-# This fiel is a copy of
+# This file is a copy of
 #     server/src/build/ldif/openldap.schema
 # from the repo
 #     https://github.com/pwm-project/pwm.git
@@ -11,33 +11,23 @@
 # 35015 organization idenfifier
 # 1.1 if an objectclass
 # 1.2 if an attribute
-# n extra identifier
-#
-attributetype ( 1.3.6.1.4.1.35015.1.2.1
-        NAME 'pwmEventLog'
-        EQUALITY octetStringMatch
+# extra identifier
+dn: cn=pwm,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: pwm
+olcAttributeTypes: ( 1.3.6.1.4.1.591242.2.2010.04.16.1
+        NAME 'pwmEventLog' DESC 'Event Log Entry' EQUALITY octetStringMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
-
-attributetype ( 1.3.6.1.4.1.35015.1.2.2
-        NAME 'pwmResponseSet'
-        EQUALITY octetStringMatch
+olcAttributeTypes: ( 1.3.6.1.4.1.591242.2.2010.04.16.2
+        NAME 'pwmResponseSet' DESC 'Response set'  EQUALITY octetStringMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
-
-attributetype ( 1.3.6.1.4.1.35015.1.2.3
+olcAttributeTypes: ( 1.3.6.1.4.1.591242.2.2010.04.16.3
         NAME 'pwmLastPwdUpdate'
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 )
-
-attributetype ( 1.3.6.1.4.1.35015.1.2.4
+olcAttributeTypes: ( 1.3.6.1.4.1.591242.2.2010.04.16.4
         NAME 'pwmGUID'
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
-
-attributetype ( 1.3.6.1.4.1.35015.1.2.6
-        NAME 'pwmOtpSecret'
-        EQUALITY octetStringMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
-
-objectclass ( 1.3.6.1.4.1.35015.1.1.1
+olcObjectclasses: ( 1.3.6.1.4.1.591242.1.2010.04.16.1
         NAME 'pwmUser'
         AUXILIARY
-        MAY ( pwmLastPwdUpdate $ pwmEventLog $ pwmResponseSet $
-pwmOtpSecret $ pwmGUID ) )
+        MAY ( pwmLastPwdUpdate $ pwmEventLog $ pwmResponseSet $ pwmGUID ) )
