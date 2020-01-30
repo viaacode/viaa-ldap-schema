@@ -51,10 +51,16 @@ olcAttributeTypes: ( 1.3.6.1.4.1.50458.2.2017.07.29.8
         ORDERING generalizedTimeOrderingMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.24
         SINGLE-VALUE )
+olcAttributeTypes: ( 1.3.6.1.4.1.50458.2.2017.07.29.9
+        NAME 'x-be-viaa-otherMail'
+        DESC 'Additional RFC822 mail adres'
+        EQUALITY caseIgnoreIA5Match
+        SUBSTR caseIgnoreIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{256} )
 olcObjectClasses: ( 1.3.6.1.4.1.50458.1.2017.07.29.1
         NAME 'x-be-viaa-person'
         AUXILIARY
-        MAY ( x-be-viaa-externalId $ x-be-viaa-accountExpiry $ x-be-viaa-confirmedAt ) )
+        MAY ( x-be-viaa-externalId $ x-be-viaa-accountExpiry $ x-be-viaa-confirmedAt $ x-be-viaa-otherMail ) )
 olcObjectClasses: ( 1.3.6.1.4.1.50458.1.2017.07.29.2
         NAME 'x-be-viaa-educationalPerson'
         DESC 'Person who is active in education, e.g. Teacher, Student, Professor.'
